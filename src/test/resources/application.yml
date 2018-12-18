@@ -1,0 +1,56 @@
+spring:
+  main:
+    banner-mode: "off"
+    web-environment: false
+    
+logging:
+  level:
+    root: INFO
+  pattern:
+    console: "%clr(%d{yy-MM-dd E HH:mm:ss.SSS}) %clr(%-5p) %clr(---) %clr(%m){faint}%n"
+
+  file: logs/pr-populator-tool.log
+
+pr-populator:
+  credentials-file-path: /credentials.json
+  diff-file:
+    path: 
+    filename:
+      prefix: diff
+      date-format: MMMdd-yyyy-hhmmss
+  jira:
+    jql-filter-query: issuetype ='Faster Story' AND 'Target Quarter' = <quarter>
+    instance-url: https://dummy
+    credentials:
+      userName: agarg2
+      password: Auratorra21
+    rest-api-path: /rest/api/2
+
+  google-config:
+    spreadsheetPRSheet:
+      id: 1TkcRM_lsPLFuMWxU8BC2_16RZaMWWG3Z7018xMVF5ec ## Full URL: https://docs.google.com/spreadsheets/d/1TkcRM_lsPLFuMWxU8BC2_16RZaMWWG3Z7018xMVF5ec/edit#gid=0
+      name: PullRequests
+      data-range: PullRequests!A1:F
+      prIdColumnName: PR ID
+      prUrlColumnName: PR URL
+      jiraIdColumnName: JIRA ID
+      productColumnName: Product
+      quarterColumnName: Quarter
+      yearColumnName: Year
+      maxEmptySequencialRows: 10
+    spreadsheetProductToRepoSheet:
+      id: 1TkcRM_lsPLFuMWxU8BC2_16RZaMWWG3Z7018xMVF5ec ## Full URL: https://docs.google.com/spreadsheets/d/1TkcRM_lsPLFuMWxU8BC2_16RZaMWWG3Z7018xMVF5ec/edit#gid=181758482
+      name: RepoToProductMapping
+      data-range: RepoToProductMapping!A1:B
+      productColumnName: Product
+      repositoryUrlColumnName: Repository URL
+      maxEmptySequencialRows: 10
+  git-hub:
+    oauth-token: 046a8986a5c065f1edbae57861848c7e4573e5bb
+    org-name: trilogy-group
+    team-url: https://github.com/orgs/trilogy-group/teams/faster-developers
+    api-request-limit: 370
+    depth-scan: 90
+    api-base-path: https://api.github.com
+    second-between-retries: 5
+    max-retries: 5

@@ -1,0 +1,5 @@
+product:
+  awork:
+    repo-url: https://github.com/trilogy-group/crossover-hiremanage-bandcamp.git
+  awork-team-score:
+    repo-url: https://github.com/trilogy-group/crossover-xo.hiremanage-team-scoring.git
