@@ -22,8 +22,8 @@ pr-populator:
     jql-filter-query: issuetype ='Faster Story' AND 'Target Quarter' = <quarter>
     instance-url: https://dummy
     credentials:
-      userName: agarg2
-      password: Auratorra21
+      userName: 
+      password: 
     rest-api-path: /rest/api/2
 
   google-config:
@@ -46,7 +46,7 @@ pr-populator:
       repositoryUrlColumnName: Repository URL
       maxEmptySequencialRows: 10
   git-hub:
-    oauth-token: 046a8986a5c065f1edbae57861848c7e4573e5bb
+    oauth-token: 
     org-name: trilogy-group
     team-url: https://github.com/orgs/trilogy-group/teams/faster-developers
     api-request-limit: 370
